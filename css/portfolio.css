@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+.printbleed{
+    font-family: "Inter", serif;
+    letter-spacing: -5px;
+    font-size: 50px;
+    text-align: center;
+    color: black;
+    filter: blur(0.8px)
+}
+
+.printbleedmini{
+    font-family: "Inter", serif;
+    letter-spacing: -5px;
+    font-size: 30px;
+    text-align: center;  
+}
+
+.paratex{
+    font-family: "Inter", serif;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+}
