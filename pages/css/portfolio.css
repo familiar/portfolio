@@ -9,6 +9,15 @@
     filter: blur(0.8px)
 }
 
+.printbleed2{
+    font-family: "Inter", serif;
+    letter-spacing: -4px;
+    font-size: 30px;
+    text-align: center;
+    color: black;
+    filter: blur(0.8px)
+}
+
 .printbleedmini{
     font-family: "Inter", serif;
     letter-spacing: -5px;
