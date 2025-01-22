@@ -23,6 +23,7 @@
     letter-spacing: -5px;
     font-size: 30px;
     text-align: left;  
+    color: white;
 }
 
 .paratex{
@@ -30,4 +31,5 @@
     font-size: 17px;
     font-weight: bold;
     text-align: left;
+    color: white;
 }
