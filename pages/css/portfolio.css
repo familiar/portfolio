@@ -32,6 +32,7 @@
     font-weight: bold;
     text-align: left;
     color: rgb(0, 0, 0);
+    line-height: 1.4;
 }
 
 .paratex a,
@@ -39,16 +40,15 @@
 .paratex a:visited,
 .paratex a:hover,
 .paratex a:active {
-    color: inherit;
+    color: rgb(0, 0, 0);
     text-decoration: none;
     outline: none;
-    -webkit-tap-highlight-color: transparent;
 }
 
 .section {
-    margin-bottom: 2em;
+    margin-bottom: 30px;
 }
 
 .section div {
-    margin-bottom: 0.2em;
+    margin-bottom: 3px;
 }
