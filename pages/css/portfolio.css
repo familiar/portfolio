@@ -44,3 +44,11 @@
     outline: none;
     -webkit-tap-highlight-color: transparent;
 }
+
+.section {
+    margin-bottom: 2em;
+}
+
+.section div {
+    margin-bottom: 0.2em;
+}
