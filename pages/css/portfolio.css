@@ -26,7 +26,7 @@
     color: rgb(0, 0, 0);
 }
 
-.paratex{
+.paratex {
     font-family: "Inter", serif;
     font-size: 17px;
     font-weight: bold;
@@ -34,15 +34,13 @@
     color: rgb(0, 0, 0);
 }
 
-.paratex a {
-    color: rgb(0, 0, 0);
+.paratex a,
+.paratex a:link,
+.paratex a:visited,
+.paratex a:hover,
+.paratex a:active {
+    color: inherit;
     text-decoration: none;
-}
-
-.paratex a:visited {
-    color: rgb(0, 0, 0);
-}
-
-.paratex a:hover {
-    text-decoration: underline;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
 }
