@@ -48,6 +48,7 @@ body {
     display: flex;
     gap: var(--spacing-unit) * 2;
     margin-bottom: var(--spacing-unit) * 4;
+    position: relative;
 }
 
 .company-logo {
@@ -55,12 +56,60 @@ body {
     height: 65px;
     border-radius: 50%;
     border: 3px solid var(--primary-color);
+    object-fit: cover;
+}
+
+.timeline-content {
+    flex: 1;
 }
 
 .timeline-content h3 {
     font-size: 32px;
     font-weight: 600;
     margin: 0;
+}
+
+.timeline-content ul {
+    margin-top: var(--spacing-unit);
+}
+
+.timeline-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-unit) * 2;
+    margin-top: var(--spacing-unit) * 2;
+}
+
+.timeline-image {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+}
+
+.current-project {
+    position: absolute;
+    top: -20px;
+    right: 20px;
+    padding: 8px 16px;
+    border: 3px solid var(--primary-color);
+    border-radius: 16px;
+    font-weight: 600;
+}
+
+.experience-container {
+    border: 3px solid var(--primary-color);
+    border-radius: 34px;
+    padding: var(--spacing-unit) * 4;
+    margin-top: var(--spacing-unit) * 2;
+}
+
+.vertical-line {
+    position: absolute;
+    left: 32px;
+    top: 100%;
+    width: 6px;
+    height: 100px;
+    background-color: var(--primary-color);
 }
 
 .date {
