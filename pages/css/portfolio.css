@@ -69,5 +69,5 @@ body {
 }
 
 .section-spaced div:not(.header) {
-    line-height: 2;
+    line-height: 1.2;
 }
