@@ -40,7 +40,6 @@ body {
     font-weight: bold;
     text-align: left;
     color: rgb(0, 0, 0);
-    line-height: 1.2;
 }
 
 .paratex a,
@@ -53,15 +52,22 @@ body {
     outline: none;
 }
 
-.section {
-    margin-bottom: 30px;
+.section-tight {
+    margin-bottom: 40px;
 }
 
-.section div {
-    margin-bottom: 0;
+.section-tight div {
+    line-height: 1.2;
 }
 
-/* Add space before section headers except the first section */
-.section:not(:first-child) > div:first-child {
-    margin-top: 15px;
+.section-spaced {
+    margin-bottom: 40px;
+}
+
+.section-spaced .header {
+    margin-bottom: 20px;
+}
+
+.section-spaced div:not(.header) {
+    line-height: 2;
 }
