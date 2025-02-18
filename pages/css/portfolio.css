@@ -40,7 +40,7 @@ body {
     font-weight: bold;
     text-align: left;
     color: rgb(0, 0, 0);
-    line-height: 1.4;
+    line-height: 1.2;
 }
 
 .paratex a,
@@ -57,10 +57,11 @@ body {
     margin-bottom: 30px;
 }
 
-.section div:first-child {
-    margin-bottom: 15px;
+.section div {
+    margin-bottom: 0;
 }
 
-.section div {
-    margin-bottom: 3px;
+/* Add space before section headers except the first section */
+.section:not(:first-child) > div:first-child {
+    margin-top: 15px;
 }
