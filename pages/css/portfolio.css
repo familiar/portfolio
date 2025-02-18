@@ -5,7 +5,7 @@
     letter-spacing: -5px;
     font-size: 50px;
     text-align: center;
-    color: white;
+    color: rgb(0, 0, 0);
     filter: blur(0.8px)
 }
 
@@ -14,7 +14,7 @@
     letter-spacing: -4px;
     font-size: 30px;
     text-align: center;
-    color: white;
+    color: rgb(0, 0, 0);
     filter: blur(0.8px)
 }
 
@@ -23,7 +23,7 @@
     letter-spacing: -5px;
     font-size: 30px;
     text-align: left;  
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .paratex{
@@ -31,5 +31,5 @@
     font-size: 17px;
     font-weight: bold;
     text-align: left;
-    color: white;
+    color: rgb(0, 0, 0);
 }
