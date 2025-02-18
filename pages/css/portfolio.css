@@ -6,6 +6,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .printbleed{
@@ -40,6 +42,11 @@ body {
     font-weight: bold;
     text-align: left;
     color: rgb(0, 0, 0);
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 .paratex a,
@@ -70,4 +77,24 @@ body {
 
 .section-spaced div:not(.header) {
     line-height: 1.2;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+
+    .paratex {
+        font-size: 15px;
+        padding: 0 15px;
+    }
+
+    .section-tight, .section-spaced {
+        margin-bottom: 30px;
+    }
+
+    .section-spaced .header {
+        margin-bottom: 15px;
+    }
 }
