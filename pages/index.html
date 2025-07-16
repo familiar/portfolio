@@ -3,48 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/portfolio.css?v=2">
+    <link rel="stylesheet" href="css/portfolio.css?v=3">
     <title>Built For Creating</title>
 </head>
 <body style="background-color:rgb(255, 255, 255);">
     <div style="text-align: center;">
         <div style="display: inline-block; text-align: left; max-width: 680px;">
             <div class="paratex">
-                <div class="section-tight">
-                    <div><span class="reveal-word">One</span> <span class="reveal-word">simple</span> <span class="reveal-word">motive.</span></div>
-                    <div></div>
-                    <div><span class="reveal-word">Built</span> <span class="reveal-word">to</span> <span class="reveal-word">help</span> <span class="reveal-word">creators.</span></div>
-                    <div></div>
-                    <div><span class="reveal-word">Sound</span> <span class="reveal-word">like</span> <span class="reveal-word">you?</span> <span class="reveal-word">Hit</span> <span class="reveal-word">us</span> <span class="reveal-word">up</span> <span class="reveal-word">with</span> <span class="reveal-word">why</span> <span class="reveal-word">you</span> <span class="reveal-word">built.</span></div>
-                </div>
-                <div class="section-tight">
-                    <div><span class="reveal-word"><a href="mailto:i@built.so">i@built.so</a></span></div>
-                    <div></div>
-                    <div><span class="reveal-word">...</span> <span class="reveal-word">"I</span> <span class="reveal-word">could</span> <span class="reveal-word">help</span> <span class="reveal-word">creators."</span></div>
-                    <div><span class="reveal-word">...</span> <span class="reveal-word">"I</span> <span class="reveal-word">could</span> <span class="reveal-word">inspire."</span></div>
-                    <div><span class="reveal-word">...</span> <span class="reveal-word">"I</span> <span class="reveal-word">could</span> <span class="reveal-word">make</span> <span class="reveal-word">a</span> <span class="reveal-word">change."</span></div>
-                </div>
-                <div class="section-tight">
-                    <div><span class="reveal-word">390</span> <span class="reveal-word">NE</span> <span class="reveal-word">191st</span> <span class="reveal-word">St</span> <span class="reveal-word">STE</span> <span class="reveal-word">17087</span></div>
-                    <div><span class="reveal-word">Miami,</span> <span class="reveal-word">FL</span> <span class="reveal-word">33179</span></div>
-                </div>
-                <div class="section-spaced">
-                    <div class="header"><span class="reveal-word">We've</span> <span class="reveal-word">Built</span></div>
-                    <div><span class="reveal-word"><a href="https://www.youtube.com/@googly">Googly</a></span></div>
-                    <div><span class="reveal-word"><a href="https://out.so">Out</a></span></div>
-                    <div><span class="reveal-word"><a href="https://www.youtube.com/rice">Rice</a></span></div>
-                </div>
-                <div class="section-spaced">
-                    <div class="header"><span class="reveal-word">We've</span> <span class="reveal-word">Produced</span></div>
-                    <div><span class="reveal-word"><a href="https://www.youtube.com/watch?v=SfvtANCpx_E">Introducing</a></span> <span class="reveal-word"><a href="https://www.youtube.com/watch?v=SfvtANCpx_E">Out.so</a></span></div>
-                    <div><span class="reveal-word"><a href="https://www.youtube.com/watch?v=fnwhyXFJbh0">Minecraft</a></span> <span class="reveal-word"><a href="https://www.youtube.com/watch?v=fnwhyXFJbh0">Got</a></span> <span class="reveal-word"><a href="https://www.youtube.com/watch?v=fnwhyXFJbh0">Me</a></span> <span class="reveal-word"><a href="https://www.youtube.com/watch?v=fnwhyXFJbh0">Into</a></span> <span class="reveal-word"><a href="https://www.youtube.com/watch?v=fnwhyXFJbh0">College</a></span></div>
-                    <div><span class="reveal-word"><a href="https://www.youtube.com/watch?v=BqY1ZDQqNNI">Screate</a></span></div>
-                </div>
-                <div class="section-spaced">
-                    <div class="header"><span class="reveal-word">©</span> <span class="reveal-word">2025</span> <span class="reveal-word">Googly,</span> <span class="reveal-word">LLC</span></div>
-                </div>
+                <div id="typewriter-content"></div>
             </div>
         </div>
     </div>
+
+    <script>
+        // Complete content to be typed
+        const content = `One simple motive.
+
+Built to help creators.
+
+Sound like you? Hit us up with why you built.
+
+<a href="mailto:i@built.so">i@built.so</a>
+
+... "I could help creators."
+... "I could inspire."
+... "I could make a change."
+
+390 NE 191st St STE 17087
+Miami, FL 33179
+
+We've Built
+<a href="https://www.youtube.com/@googly">Googly</a>
+<a href="https://out.so">Out</a>
+<a href="https://www.youtube.com/rice">Rice</a>
+
+We've Produced
+<a href="https://www.youtube.com/watch?v=SfvtANCpx_E">Introducing Out.so</a>
+<a href="https://www.youtube.com/watch?v=fnwhyXFJbh0">Minecraft Got Me Into College</a>
+<a href="https://www.youtube.com/watch?v=BqY1ZDQqNNI">Screate</a>
+
+© 2025 Googly, LLC`;
+
+        function typeWriter() {
+            const container = document.getElementById('typewriter-content');
+            let charIndex = 0;
+            const delay = 60; // milliseconds between each character
+            let animationDelay = 0;
+            
+            function addCharacter() {
+                if (charIndex < content.length) {
+                    const char = content[charIndex];
+                    
+                    if (char === '<') {
+                        // Handle HTML tags - add them instantly without animation
+                        let tagEnd = content.indexOf('>', charIndex);
+                        if (tagEnd !== -1) {
+                            let tag = content.substring(charIndex, tagEnd + 1);
+                            container.innerHTML += tag;
+                            charIndex = tagEnd + 1;
+                        } else {
+                            charIndex++;
+                        }
+                        setTimeout(addCharacter, 0);
+                    } else if (char === '\n') {
+                        // Handle line breaks
+                        if (charIndex < content.length - 1 && content[charIndex + 1] === '\n') {
+                            // Double line break - section break
+                            container.innerHTML += '</div><div class="section-break" style="margin-bottom: 40px;"></div><div>';
+                            charIndex += 2;
+                        } else {
+                            // Single line break
+                            container.innerHTML += '</div><div>';
+                            charIndex++;
+                        }
+                        setTimeout(addCharacter, delay);
+                    } else {
+                        // Regular character with blur animation
+                        const span = document.createElement('span');
+                        span.className = 'reveal-char';
+                        span.style.animationDelay = animationDelay + 'ms';
+                        span.textContent = char;
+                        container.appendChild(span);
+                        
+                        charIndex++;
+                        animationDelay += 50; // Stagger the blur animations
+                        setTimeout(addCharacter, delay);
+                    }
+                } else {
+                    // Format the final content with proper sections after typing is done
+                    setTimeout(formatFinalContent, 1000);
+                }
+            }
+            
+            function formatFinalContent() {
+                // Apply proper section formatting
+                const sections = content.split('\n\n');
+                let formattedHTML = '';
+                
+                sections.forEach((section, index) => {
+                    const lines = section.split('\n');
+                    
+                    if (index <= 2) {
+                        // First three sections are tight
+                        formattedHTML += '<div class="section-tight">';
+                        lines.forEach(line => {
+                            formattedHTML += `<div>${line}</div>`;
+                        });
+                        formattedHTML += '</div>';
+                    } else {
+                        // Remaining sections are spaced
+                        formattedHTML += '<div class="section-spaced">';
+                        lines.forEach((line, lineIndex) => {
+                            if (lineIndex === 0 && (line.includes("We've") || line.includes("©"))) {
+                                formattedHTML += `<div class="header">${line}</div>`;
+                            } else {
+                                formattedHTML += `<div>${line}</div>`;
+                            }
+                        });
+                        formattedHTML += '</div>';
+                    }
+                });
+                
+                container.innerHTML = formattedHTML;
+            }
+            
+            // Start with opening div
+            container.innerHTML = '<div>';
+            addCharacter();
+        }
+        
+        // Start the typewriter effect when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(typeWriter, 500); // Small delay before starting
+        });
+    </script>
 </body>
 </html>
