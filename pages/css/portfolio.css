@@ -82,35 +82,91 @@ body {
 /* Character-by-character typewriter blur animation */
 .reveal-char {
     opacity: 0;
-    filter: blur(20px);
+    filter: blur(25px);
     display: inline;
-    animation: typewriterBlur 1.2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+    animation: typewriterBlur 1.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
 }
 
 @keyframes typewriterBlur {
     0% {
         opacity: 0;
-        filter: blur(20px);
+        filter: blur(25px);
+    }
+    5% {
+        opacity: 0.05;
+        filter: blur(24px);
+    }
+    10% {
+        opacity: 0.1;
+        filter: blur(22px);
     }
     15% {
-        opacity: 0.1;
+        opacity: 0.15;
+        filter: blur(20px);
+    }
+    20% {
+        opacity: 0.2;
         filter: blur(18px);
     }
+    25% {
+        opacity: 0.25;
+        filter: blur(16px);
+    }
     30% {
-        opacity: 0.3;
+        opacity: 0.35;
         filter: blur(14px);
     }
-    50% {
-        opacity: 0.6;
+    35% {
+        opacity: 0.45;
+        filter: blur(12px);
+    }
+    40% {
+        opacity: 0.55;
+        filter: blur(10px);
+    }
+    45% {
+        opacity: 0.65;
         filter: blur(8px);
     }
-    70% {
+    50% {
+        opacity: 0.7;
+        filter: blur(7px);
+    }
+    55% {
+        opacity: 0.75;
+        filter: blur(6px);
+    }
+    60% {
+        opacity: 0.8;
+        filter: blur(5px);
+    }
+    65% {
         opacity: 0.85;
+        filter: blur(4px);
+    }
+    70% {
+        opacity: 0.88;
         filter: blur(3px);
     }
+    75% {
+        opacity: 0.91;
+        filter: blur(2.5px);
+    }
+    80% {
+        opacity: 0.94;
+        filter: blur(2px);
+    }
     85% {
-        opacity: 0.95;
+        opacity: 0.96;
+        filter: blur(1.5px);
+    }
+    90% {
+        opacity: 0.98;
         filter: blur(1px);
+    }
+    95% {
+        opacity: 0.99;
+        filter: blur(0.5px);
     }
     100% {
         opacity: 1;
