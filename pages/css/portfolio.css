@@ -79,21 +79,69 @@ body {
     line-height: 1.2;
 }
 
+/* Blur animation styles */
+.reveal-text {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(20px);
+    animation: revealText 1.2s ease-out forwards;
+}
+
+@keyframes revealText {
+    0% {
+        opacity: 0;
+        filter: blur(10px);
+        transform: translateY(20px);
+    }
+    60% {
+        opacity: 0.8;
+        filter: blur(3px);
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0px);
+        transform: translateY(0);
+    }
+}
+
+/* Section-specific delays */
+.section-tight:nth-of-type(1) .reveal-text:nth-child(1) { animation-delay: 0.1s; }
+.section-tight:nth-of-type(1) .reveal-text:nth-child(3) { animation-delay: 0.3s; }
+.section-tight:nth-of-type(1) .reveal-text:nth-child(5) { animation-delay: 0.5s; }
+
+.section-tight:nth-of-type(2) .reveal-text:nth-child(1) { animation-delay: 0.8s; }
+.section-tight:nth-of-type(2) .reveal-text:nth-child(3) { animation-delay: 1.0s; }
+.section-tight:nth-of-type(2) .reveal-text:nth-child(4) { animation-delay: 1.2s; }
+.section-tight:nth-of-type(2) .reveal-text:nth-child(5) { animation-delay: 1.4s; }
+
+.section-tight:nth-of-type(3) .reveal-text:nth-child(1) { animation-delay: 1.7s; }
+.section-tight:nth-of-type(3) .reveal-text:nth-child(2) { animation-delay: 1.9s; }
+
+.section-spaced:nth-of-type(1) .reveal-text:nth-child(1) { animation-delay: 2.2s; }
+.section-spaced:nth-of-type(1) .reveal-text:nth-child(2) { animation-delay: 2.4s; }
+.section-spaced:nth-of-type(1) .reveal-text:nth-child(3) { animation-delay: 2.6s; }
+.section-spaced:nth-of-type(1) .reveal-text:nth-child(4) { animation-delay: 2.8s; }
+
+.section-spaced:nth-of-type(2) .reveal-text:nth-child(1) { animation-delay: 3.1s; }
+.section-spaced:nth-of-type(2) .reveal-text:nth-child(2) { animation-delay: 3.3s; }
+.section-spaced:nth-of-type(2) .reveal-text:nth-child(3) { animation-delay: 3.5s; }
+.section-spaced:nth-of-type(2) .reveal-text:nth-child(4) { animation-delay: 3.7s; }
+
+.section-spaced:nth-of-type(3) .reveal-text:nth-child(1) { animation-delay: 4.0s; }
+
 /* Mobile Responsiveness */
 @media screen and (max-width: 480px) {
     body {
         padding: 15px;
     }
-
     .paratex {
         font-size: 15px;
         padding: 0 15px;
     }
-
     .section-tight, .section-spaced {
         margin-bottom: 30px;
     }
-
     .section-spaced .header {
         margin-bottom: 15px;
     }
