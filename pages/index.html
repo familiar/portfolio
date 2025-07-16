@@ -76,11 +76,19 @@
                     for (let i = 0; i < text.length; i++) {
                         const char = text[i];
                         const span = document.createElement('span');
-                        span.className = 'reveal-char';
-                        span.style.animationDelay = animationDelay + 'ms';
-                        span.textContent = char;
+                        
+                        // Don't animate spaces - they should appear immediately
+                        if (char === ' ') {
+                            span.textContent = char;
+                            // No animation class for spaces
+                        } else {
+                            span.className = 'reveal-char';
+                            span.style.animationDelay = animationDelay + 'ms';
+                            span.textContent = char;
+                            animationDelay += 55; // Only increment for non-space characters
+                        }
+                        
                         fragment.appendChild(span);
-                        animationDelay += 55; // Balanced for smooth flow without glitches
                     }
                     
                     parent.replaceChild(fragment, textNode);
