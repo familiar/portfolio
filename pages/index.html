@@ -16,120 +16,78 @@
     </div>
 
     <script>
-        // Complete content to be typed
-        const content = `One simple motive.
-
-Built to help creators.
-
-Sound like you? Hit us up with why you built.
-
-<a href="mailto:i@built.so">i@built.so</a>
-
-... "I could help creators."
-... "I could inspire."
-... "I could make a change."
-
-390 NE 191st St STE 17087
-Miami, FL 33179
-
-We've Built
-<a href="https://www.youtube.com/@googly">Googly</a>
-<a href="https://out.so">Out</a>
-<a href="https://www.youtube.com/rice">Rice</a>
-
-We've Produced
-<a href="https://www.youtube.com/watch?v=SfvtANCpx_E">Introducing Out.so</a>
-<a href="https://www.youtube.com/watch?v=fnwhyXFJbh0">Minecraft Got Me Into College</a>
-<a href="https://www.youtube.com/watch?v=BqY1ZDQqNNI">Screate</a>
-
-© 2025 Googly, LLC`;
+        // Complete content structure
+        const contentStructure = [
+            { type: 'section-tight', lines: ['One simple motive.', '', 'Built to help creators.', '', 'Sound like you? Hit us up with why you built.'] },
+            { type: 'section-tight', lines: ['<a href="mailto:i@built.so">i@built.so</a>', '', '... "I could help creators."', '... "I could inspire."', '... "I could make a change."'] },
+            { type: 'section-tight', lines: ['390 NE 191st St STE 17087', 'Miami, FL 33179'] },
+            { type: 'section-spaced', header: "We've Built", lines: ['<a href="https://www.youtube.com/@googly">Googly</a>', '<a href="https://out.so">Out</a>', '<a href="https://www.youtube.com/rice">Rice</a>'] },
+            { type: 'section-spaced', header: "We've Produced", lines: ['<a href="https://www.youtube.com/watch?v=SfvtANCpx_E">Introducing Out.so</a>', '<a href="https://www.youtube.com/watch?v=fnwhyXFJbh0">Minecraft Got Me Into College</a>', '<a href="https://www.youtube.com/watch?v=BqY1ZDQqNNI">Screate</a>'] },
+            { type: 'section-spaced', header: '© 2025 Googly, LLC', lines: [] }
+        ];
 
         function typeWriter() {
             const container = document.getElementById('typewriter-content');
-            let charIndex = 0;
-            const delay = 60; // milliseconds between each character
             let animationDelay = 0;
             
-            function addCharacter() {
-                if (charIndex < content.length) {
-                    const char = content[charIndex];
+            // First, create the complete static structure
+            let htmlContent = '';
+            contentStructure.forEach(section => {
+                htmlContent += `<div class="${section.type}">`;
+                
+                if (section.header) {
+                    htmlContent += `<div class="header">${section.header}</div>`;
+                }
+                
+                section.lines.forEach(line => {
+                    htmlContent += `<div>${line}</div>`;
+                });
+                
+                htmlContent += '</div>';
+            });
+            
+            // Set the complete structure but make all characters invisible initially
+            container.innerHTML = htmlContent;
+            
+            // Now find all text nodes and wrap each character
+            function wrapCharacters(element) {
+                const walker = document.createTreeWalker(
+                    element,
+                    NodeFilter.SHOW_TEXT,
+                    null,
+                    false
+                );
+                
+                const textNodes = [];
+                let node;
+                while (node = walker.nextNode()) {
+                    // Skip empty text nodes or whitespace-only nodes
+                    if (node.textContent.trim().length > 0) {
+                        textNodes.push(node);
+                    }
+                }
+                
+                textNodes.forEach(textNode => {
+                    const text = textNode.textContent;
+                    const parent = textNode.parentNode;
                     
-                    if (char === '<') {
-                        // Handle HTML tags - add them instantly without animation
-                        let tagEnd = content.indexOf('>', charIndex);
-                        if (tagEnd !== -1) {
-                            let tag = content.substring(charIndex, tagEnd + 1);
-                            container.innerHTML += tag;
-                            charIndex = tagEnd + 1;
-                        } else {
-                            charIndex++;
-                        }
-                        setTimeout(addCharacter, 0);
-                    } else if (char === '\n') {
-                        // Handle line breaks
-                        if (charIndex < content.length - 1 && content[charIndex + 1] === '\n') {
-                            // Double line break - section break
-                            container.innerHTML += '</div><div class="section-break" style="margin-bottom: 40px;"></div><div>';
-                            charIndex += 2;
-                        } else {
-                            // Single line break
-                            container.innerHTML += '</div><div>';
-                            charIndex++;
-                        }
-                        setTimeout(addCharacter, delay);
-                    } else {
-                        // Regular character with blur animation
+                    // Create spans for each character
+                    const fragment = document.createDocumentFragment();
+                    for (let i = 0; i < text.length; i++) {
+                        const char = text[i];
                         const span = document.createElement('span');
                         span.className = 'reveal-char';
                         span.style.animationDelay = animationDelay + 'ms';
                         span.textContent = char;
-                        container.appendChild(span);
-                        
-                        charIndex++;
-                        animationDelay += 50; // Stagger the blur animations
-                        setTimeout(addCharacter, delay);
+                        fragment.appendChild(span);
+                        animationDelay += 50; // 50ms delay between each character
                     }
-                } else {
-                    // Format the final content with proper sections after typing is done
-                    setTimeout(formatFinalContent, 1000);
-                }
-            }
-            
-            function formatFinalContent() {
-                // Apply proper section formatting
-                const sections = content.split('\n\n');
-                let formattedHTML = '';
-                
-                sections.forEach((section, index) => {
-                    const lines = section.split('\n');
                     
-                    if (index <= 2) {
-                        // First three sections are tight
-                        formattedHTML += '<div class="section-tight">';
-                        lines.forEach(line => {
-                            formattedHTML += `<div>${line}</div>`;
-                        });
-                        formattedHTML += '</div>';
-                    } else {
-                        // Remaining sections are spaced
-                        formattedHTML += '<div class="section-spaced">';
-                        lines.forEach((line, lineIndex) => {
-                            if (lineIndex === 0 && (line.includes("We've") || line.includes("©"))) {
-                                formattedHTML += `<div class="header">${line}</div>`;
-                            } else {
-                                formattedHTML += `<div>${line}</div>`;
-                            }
-                        });
-                        formattedHTML += '</div>';
-                    }
+                    parent.replaceChild(fragment, textNode);
                 });
-                
-                container.innerHTML = formattedHTML;
             }
             
-            // Start with opening div
-            container.innerHTML = '<div>';
-            addCharacter();
+            wrapCharacters(container);
         }
         
         // Start the typewriter effect when page loads
