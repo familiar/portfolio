@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 body {
     margin: 0;
@@ -11,34 +11,34 @@ body {
 }
 
 .printbleed{
-    font-family: "Reenie Beanie", cursive;
+    font-family: "Inter", serif;
     letter-spacing: -5px;
-    font-size: 65px;
+    font-size: 50px;
     text-align: center;
     color: rgb(0, 0, 0);
     filter: blur(0.8px)
 }
 
 .printbleed2{
-    font-family: "Reenie Beanie", cursive;
+    font-family: "Inter", serif;
     letter-spacing: -4px;
-    font-size: 45px;
+    font-size: 30px;
     text-align: center;
     color: rgb(0, 0, 0);
     filter: blur(0.8px)
 }
 
 .printbleedmini{
-    font-family: "Reenie Beanie", cursive;
+    font-family: "Inter", serif;
     letter-spacing: -5px;
-    font-size: 45px;
+    font-size: 30px;
     text-align: left;  
     color: rgb(0, 0, 0);
 }
 
 .paratex {
-    font-family: "Reenie Beanie", cursive;
-    font-size: 32px;
+    font-family: "Inter", serif;
+    font-size: 17px;
     font-weight: bold;
     text-align: left;
     color: rgb(0, 0, 0);
@@ -124,7 +124,7 @@ body {
         padding: 15px;
     }
     .paratex {
-        font-size: 30px;
+        font-size: 15px;
         padding: 0 15px;
     }
     .section-tight, .section-spaced {
