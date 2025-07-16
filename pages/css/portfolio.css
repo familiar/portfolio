@@ -82,19 +82,23 @@ body {
 /* Character-by-character typewriter blur animation */
 .reveal-char {
     opacity: 0;
-    filter: blur(12px);
+    filter: blur(15px);
     display: inline;
-    animation: typewriterBlur 0.4s ease-out forwards;
+    animation: typewriterBlur 0.8s ease-out forwards;
 }
 
 @keyframes typewriterBlur {
     0% {
         opacity: 0;
-        filter: blur(12px);
+        filter: blur(15px);
     }
-    50% {
-        opacity: 0.6;
-        filter: blur(6px);
+    30% {
+        opacity: 0.3;
+        filter: blur(10px);
+    }
+    70% {
+        opacity: 0.8;
+        filter: blur(3px);
     }
     100% {
         opacity: 1;
