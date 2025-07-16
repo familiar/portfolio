@@ -13,7 +13,7 @@ body {
 .printbleed{
     font-family: "Reenie Beanie", cursive;
     letter-spacing: -5px;
-    font-size: 50px;
+    font-size: 65px;
     text-align: center;
     color: rgb(0, 0, 0);
     filter: blur(0.8px)
@@ -22,7 +22,7 @@ body {
 .printbleed2{
     font-family: "Reenie Beanie", cursive;
     letter-spacing: -4px;
-    font-size: 30px;
+    font-size: 45px;
     text-align: center;
     color: rgb(0, 0, 0);
     filter: blur(0.8px)
@@ -31,14 +31,14 @@ body {
 .printbleedmini{
     font-family: "Reenie Beanie", cursive;
     letter-spacing: -5px;
-    font-size: 30px;
+    font-size: 45px;
     text-align: left;  
     color: rgb(0, 0, 0);
 }
 
 .paratex {
     font-family: "Reenie Beanie", cursive;
-    font-size: 17px;
+    font-size: 32px;
     font-weight: bold;
     text-align: left;
     color: rgb(0, 0, 0);
@@ -124,7 +124,7 @@ body {
         padding: 15px;
     }
     .paratex {
-        font-size: 15px;
+        font-size: 30px;
         padding: 0 15px;
     }
     .section-tight, .section-spaced {
