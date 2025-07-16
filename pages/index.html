@@ -1,166 +1,47 @@
-<!DOCTYPE html>
+Index.html: <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/portfolio.css?v=2">
     <title>Built For Creating</title>
-    <style>
-        /* Base styles */
-        body {
-            background-color: rgb(255, 255, 255);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            margin: 0;
-            padding: 20px;
-            line-height: 1.6;
-        }
-
-        .paratex {
-            font-size: 16px;
-            color: #333;
-        }
-
-        .section-tight {
-            margin-bottom: 20px;
-        }
-
-        .section-spaced {
-            margin-bottom: 30px;
-        }
-
-        .header {
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        a {
-            color: #0066cc;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* Animation styles */
-        .reveal-text {
-            opacity: 0;
-            filter: blur(10px);
-            transform: translateY(20px);
-            animation: revealText 1.2s ease-out forwards;
-        }
-
-        @keyframes revealText {
-            0% {
-                opacity: 0;
-                filter: blur(10px);
-                transform: translateY(20px);
-            }
-            60% {
-                opacity: 0.8;
-                filter: blur(3px);
-                transform: translateY(10px);
-            }
-            100% {
-                opacity: 1;
-                filter: blur(0px);
-                transform: translateY(0);
-            }
-        }
-
-        /* Staggered animation delays */
-        .reveal-text:nth-child(1) { animation-delay: 0.1s; }
-        .reveal-text:nth-child(2) { animation-delay: 0.2s; }
-        .reveal-text:nth-child(3) { animation-delay: 0.3s; }
-        .reveal-text:nth-child(4) { animation-delay: 0.4s; }
-        .reveal-text:nth-child(5) { animation-delay: 0.5s; }
-        .reveal-text:nth-child(6) { animation-delay: 0.6s; }
-        .reveal-text:nth-child(7) { animation-delay: 0.7s; }
-        .reveal-text:nth-child(8) { animation-delay: 0.8s; }
-        .reveal-text:nth-child(9) { animation-delay: 0.9s; }
-        .reveal-text:nth-child(10) { animation-delay: 1.0s; }
-
-        /* Section-specific delays */
-        .section-tight:nth-of-type(1) .reveal-text { animation-delay: 0.1s; }
-        .section-tight:nth-of-type(1) .reveal-text:nth-child(2) { animation-delay: 0.3s; }
-        .section-tight:nth-of-type(1) .reveal-text:nth-child(3) { animation-delay: 0.5s; }
-        .section-tight:nth-of-type(1) .reveal-text:nth-child(4) { animation-delay: 0.7s; }
-        .section-tight:nth-of-type(1) .reveal-text:nth-child(5) { animation-delay: 0.9s; }
-
-        .section-tight:nth-of-type(2) .reveal-text { animation-delay: 1.2s; }
-        .section-tight:nth-of-type(2) .reveal-text:nth-child(2) { animation-delay: 1.4s; }
-        .section-tight:nth-of-type(2) .reveal-text:nth-child(3) { animation-delay: 1.6s; }
-        .section-tight:nth-of-type(2) .reveal-text:nth-child(4) { animation-delay: 1.8s; }
-        .section-tight:nth-of-type(2) .reveal-text:nth-child(5) { animation-delay: 2.0s; }
-
-        .section-tight:nth-of-type(3) .reveal-text { animation-delay: 2.3s; }
-        .section-tight:nth-of-type(3) .reveal-text:nth-child(2) { animation-delay: 2.5s; }
-
-        .section-spaced:nth-of-type(1) .reveal-text { animation-delay: 2.8s; }
-        .section-spaced:nth-of-type(1) .reveal-text:nth-child(2) { animation-delay: 3.0s; }
-        .section-spaced:nth-of-type(1) .reveal-text:nth-child(3) { animation-delay: 3.2s; }
-        .section-spaced:nth-of-type(1) .reveal-text:nth-child(4) { animation-delay: 3.4s; }
-
-        .section-spaced:nth-of-type(2) .reveal-text { animation-delay: 3.7s; }
-        .section-spaced:nth-of-type(2) .reveal-text:nth-child(2) { animation-delay: 3.9s; }
-        .section-spaced:nth-of-type(2) .reveal-text:nth-child(3) { animation-delay: 4.1s; }
-        .section-spaced:nth-of-type(2) .reveal-text:nth-child(4) { animation-delay: 4.3s; }
-
-        .section-spaced:nth-of-type(3) .reveal-text { animation-delay: 4.6s; }
-
-        /* Hover effects for interactive elements */
-        .reveal-text:hover {
-            transform: translateY(-2px);
-            transition: transform 0.3s ease;
-        }
-
-        /* Responsive design */
-        @media (max-width: 768px) {
-            body {
-                padding: 15px;
-            }
-            
-            .paratex {
-                font-size: 14px;
-            }
-        }
-    </style>
 </head>
-<body>
+<body style="background-color:rgb(255, 255, 255);">
     <div style="text-align: center;">
         <div style="display: inline-block; text-align: left; max-width: 680px;">
             <div class="paratex">
                 <div class="section-tight">
-                    <div class="reveal-text">One simple motive.</div>
+                    <div>One simple motive.</div>
                     <div></div>
-                    <div class="reveal-text">Built to help creators.</div>
+                    <div>Built to help creators.</div>
                     <div></div>
-                    <div class="reveal-text">Sound like you? Hit us up with why you built.</div>
+                    <div>Sound like you? Hit us up with why you built.</div>
                 </div>
                 <div class="section-tight">
-                    <div class="reveal-text"><a href="mailto:i@built.so">i@built.so</a></div>
+                    <div><a href="mailto:i@built.so">i@built.so</a></div>
                     <div></div>
-                    <div class="reveal-text">... "I could help creators."</div>
-                    <div class="reveal-text">... "I could inspire."</div>
-                    <div class="reveal-text">... "I could make a change."</div>
+                    <div>... "I could help creators."</div>
+                    <div>... "I could inspire."</div>
+                    <div>... "I could make a change."</div>
                 </div>
                 <div class="section-tight">
-                    <div class="reveal-text">390 NE 191st St STE 17087</div>
-                    <div class="reveal-text">Miami, FL 33179</div>
+                    <div>390 NE 191st St STE 17087</div>
+                    <div>Miami, FL 33179</div>
                 </div>
                 <div class="section-spaced">
-                    <div class="header reveal-text">We've Built</div>
-                    <div class="reveal-text"><a href="https://www.youtube.com/@googly">Googly</a></div>
-                    <div class="reveal-text"><a href="https://out.so">Out</a></div>
-                    <div class="reveal-text"><a href="https://www.youtube.com/rice">Rice</a></div>
+                    <div class="header">We've Built</div>
+                    <div><a href="https://www.youtube.com/@googly">Googly</a></div>
+                    <div><a href="https://out.so">Out</a></div>
+                    <div><a href="https://www.youtube.com/rice">Rice</a></div>
                 </div>
                 <div class="section-spaced">
-                    <div class="header reveal-text">We've Produced</div>
-                    <div class="reveal-text"><a href="https://www.youtube.com/watch?v=SfvtANCpx_E">Introducing Out.so</a></div>
-                    <div class="reveal-text"><a href="https://www.youtube.com/watch?v=fnwhyXFJbh0">Minecraft Got Me Into College</a></div>
-                    <div class="reveal-text"><a href="https://www.youtube.com/watch?v=BqY1ZDQqNNI">Screate</a></div>
+                    <div class="header">We've Produced</div>
+                    <div><a href="https://www.youtube.com/watch?v=SfvtANCpx_E">Introducing Out.so</a></div>
+                    <div><a href="https://www.youtube.com/watch?v=fnwhyXFJbh0">Minecraft Got Me Into College</a></div>
+                    <div><a href="https://www.youtube.com/watch?v=BqY1ZDQqNNI">Screate</a></div>
                 </div>
                 <div class="section-spaced">
-                    <div class="header reveal-text">© 2025 Googly, LLC</div>
+                    <div class="header">© 2025 Googly, LLC</div>
                 </div>
             </div>
         </div>
