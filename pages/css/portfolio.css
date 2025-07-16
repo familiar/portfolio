@@ -79,12 +79,12 @@ body {
     line-height: 1.2;
 }
 
-/* Line-by-line typewriter blur animation */
-.reveal-word {
+/* Character-by-character typewriter blur animation */
+.reveal-char {
     opacity: 0;
     filter: blur(12px);
-    display: inline-block;
-    animation: typewriterBlur 1.0s ease-out forwards;
+    display: inline;
+    animation: typewriterBlur 0.4s ease-out forwards;
 }
 
 @keyframes typewriterBlur {
@@ -100,78 +100,6 @@ body {
         opacity: 1;
         filter: blur(0px);
     }
-}
-
-/* Sequential delays for true typewriter effect - line by line */
-/* Line 1: "One simple motive." */
-.reveal-word:nth-of-type(1) { animation-delay: 0.2s; }
-.reveal-word:nth-of-type(2) { animation-delay: 0.4s; }
-.reveal-word:nth-of-type(3) { animation-delay: 0.6s; }
-
-/* Line 2: "Built to help creators." */
-.reveal-word:nth-of-type(4) { animation-delay: 1.0s; }
-.reveal-word:nth-of-type(5) { animation-delay: 1.2s; }
-.reveal-word:nth-of-type(6) { animation-delay: 1.4s; }
-.reveal-word:nth-of-type(7) { animation-delay: 1.6s; }
-
-/* Line 3: "Sound like you? Hit us up with why you built." */
-.reveal-word:nth-of-type(8) { animation-delay: 2.0s; }
-.reveal-word:nth-of-type(9) { animation-delay: 2.2s; }
-.reveal-word:nth-of-type(10) { animation-delay: 2.4s; }
-.reveal-word:nth-of-type(11) { animation-delay: 2.6s; }
-.reveal-word:nth-of-type(12) { animation-delay: 2.8s; }
-.reveal-word:nth-of-type(13) { animation-delay: 3.0s; }
-.reveal-word:nth-of-type(14) { animation-delay: 3.2s; }
-.reveal-word:nth-of-type(15) { animation-delay: 3.4s; }
-.reveal-word:nth-of-type(16) { animation-delay: 3.6s; }
-.reveal-word:nth-of-type(17) { animation-delay: 3.8s; }
-
-/* Line 4: "i@built.so" */
-.reveal-word:nth-of-type(18) { animation-delay: 4.2s; }
-
-/* Line 5: "... 'I could help creators.'" */
-.reveal-word:nth-of-type(19) { animation-delay: 4.6s; }
-.reveal-word:nth-of-type(20) { animation-delay: 4.8s; }
-.reveal-word:nth-of-type(21) { animation-delay: 5.0s; }
-.reveal-word:nth-of-type(22) { animation-delay: 5.2s; }
-.reveal-word:nth-of-type(23) { animation-delay: 5.4s; }
-
-/* Line 6: "... 'I could inspire.'" */
-.reveal-word:nth-of-type(24) { animation-delay: 5.8s; }
-.reveal-word:nth-of-type(25) { animation-delay: 6.0s; }
-.reveal-word:nth-of-type(26) { animation-delay: 6.2s; }
-.reveal-word:nth-of-type(27) { animation-delay: 6.4s; }
-
-/* Line 7: "... 'I could make a change.'" */
-.reveal-word:nth-of-type(28) { animation-delay: 6.8s; }
-.reveal-word:nth-of-type(29) { animation-delay: 7.0s; }
-.reveal-word:nth-of-type(30) { animation-delay: 7.2s; }
-.reveal-word:nth-of-type(31) { animation-delay: 7.4s; }
-.reveal-word:nth-of-type(32) { animation-delay: 7.6s; }
-.reveal-word:nth-of-type(33) { animation-delay: 7.8s; }
-
-/* Continue for remaining lines... */
-.reveal-word:nth-of-type(34) { animation-delay: 8.2s; }
-.reveal-word:nth-of-type(35) { animation-delay: 8.4s; }
-.reveal-word:nth-of-type(36) { animation-delay: 8.6s; }
-.reveal-word:nth-of-type(37) { animation-delay: 8.8s; }
-.reveal-word:nth-of-type(38) { animation-delay: 9.0s; }
-.reveal-word:nth-of-type(39) { animation-delay: 9.2s; }
-.reveal-word:nth-of-type(40) { animation-delay: 9.4s; }
-.reveal-word:nth-of-type(41) { animation-delay: 9.6s; }
-.reveal-word:nth-of-type(42) { animation-delay: 9.8s; }
-.reveal-word:nth-of-type(43) { animation-delay: 10.0s; }
-.reveal-word:nth-of-type(44) { animation-delay: 10.2s; }
-.reveal-word:nth-of-type(45) { animation-delay: 10.4s; }
-.reveal-word:nth-of-type(46) { animation-delay: 10.6s; }
-.reveal-word:nth-of-type(47) { animation-delay: 10.8s; }
-.reveal-word:nth-of-type(48) { animation-delay: 11.0s; }
-.reveal-word:nth-of-type(49) { animation-delay: 11.2s; }
-.reveal-word:nth-of-type(50) { animation-delay: 11.4s; }
-
-/* Preserve word spacing */
-.reveal-word:not(:last-child) {
-    margin-right: 0.3em;
 }
 
 /* Mobile Responsiveness */
