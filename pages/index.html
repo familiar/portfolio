@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/portfolio.css?v=3">
     <title>Built For Creating</title>
 </head>
@@ -80,7 +83,7 @@
                         span.style.animationDelay = animationDelay + 'ms';
                         span.textContent = char;
                         fragment.appendChild(span);
-                        animationDelay += 80; // 80ms delay between each character
+                        animationDelay += 35; // Reduced from 80ms to 35ms for smoother overlap
                     }
                     
                     parent.replaceChild(fragment, textNode);
