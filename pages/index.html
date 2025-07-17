@@ -19,12 +19,35 @@
     <script>
         // Complete content structure
         const contentStructure = [
-            { type: 'section-tight', lines: ['One simple motive.', '', 'Built to help creators.', '', 'Sound like you? Hit us up with why you built.'] },
-            { type: 'section-tight', lines: ['<a href="mailto:i@built.so">i@built.so</a>', '', '... "I could help creators."', '... "I could inspire."', '... "I could make a change."'] },
-            { type: 'section-tight', lines: ['390 NE 191st St STE 17087', 'Miami, FL 33179'] },
-            { type: 'section-spaced', header: "We've Built", lines: ['<a href="https://www.youtube.com/@googly">Googly</a>', '<a href="https://out.so">Out</a>', '<a href="https://www.youtube.com/rice">Rice</a>'] },
-            { type: 'section-spaced', header: "We've Produced", lines: ['<a href="https://www.youtube.com/watch?v=SfvtANCpx_E">Introducing Out.so</a>', '<a href="https://www.youtube.com/watch?v=fnwhyXFJbh0">Minecraft Got Me Into College</a>', '<a href="https://www.youtube.com/watch?v=BqY1ZDQqNNI">Screate</a>'] },
-            { type: 'section-spaced', header: '© 2025 Googly, LLC', lines: [] }
+            { type: 'section-tight', lines: [
+                { text: 'One simple motive.', className: 'reenie-beanie' },
+                { text: '' },
+                { text: 'Built to help creators.', className: 'reenie-beanie' },
+                { text: '' },
+                { text: 'Sound like you? Hit us up with why you built.', className: 'reenie-beanie' }
+            ]},
+            { type: 'section-tight', lines: [
+                { text: '<a href="mailto:i@built.so">i@built.so</a>' },
+                { text: '' },
+                { text: '... "I could help creators."' },
+                { text: '... "I could inspire."' },
+                { text: '... "I could make a change."' }
+            ]},
+            { type: 'section-tight', lines: [
+                { text: '390 NE 191st St STE 17087' },
+                { text: 'Miami, FL 33179' }
+            ]},
+            { type: 'section-spaced', header: "We've Built", lines: [
+                { text: '<a href="https://www.youtube.com/@googly">Googly</a>' },
+                { text: '<a href="https://out.so">Out</a>' },
+                { text: '<a href="https://www.youtube.com/rice">Rice</a>' }
+            ]},
+            { type: 'section-spaced', header: "We've Produced", lines: [
+                { text: '<a href="https://www.youtube.com/watch?v=SfvtANCpx_E">Introducing Out.so</a>' },
+                { text: '<a href="https://www.youtube.com/watch?v=fnwhyXFJbh0">Minecraft Got Me Into College</a>' },
+                { text: '<a href="https://www.youtube.com/watch?v=BqY1ZDQqNNI">Screate</a>' }
+            ]},
+            { type: 'section-spaced', header: { text: '© 2025 Googly, LLC', className: 'reenie-beanie' }, lines: [] }
         ];
 
         function typeWriter() {
@@ -37,11 +60,19 @@
                 htmlContent += `<div class="${section.type}">`;
                 
                 if (section.header) {
-                    htmlContent += `<div class="header">${section.header}</div>`;
+                    if (typeof section.header === 'object') {
+                        htmlContent += `<div class="header ${section.header.className || ''}">${section.header.text}</div>`;
+                    } else {
+                        htmlContent += `<div class="header">${section.header}</div>`;
+                    }
                 }
                 
                 section.lines.forEach(line => {
-                    htmlContent += `<div>${line}</div>`;
+                    if (typeof line === 'object') {
+                        htmlContent += `<div class="${line.className || ''}">${line.text}</div>`;
+                    } else {
+                        htmlContent += `<div>${line}</div>`;
+                    }
                 });
                 
                 htmlContent += '</div>';
