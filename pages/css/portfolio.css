@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie:wght@400&display=swap');
 
 body {
     margin: 0;
@@ -9,7 +10,6 @@ body {
     padding: 20px;
     box-sizing: border-box;
 }
-
 .printbleed{
     font-family: "Inter", serif;
     letter-spacing: -5px;
@@ -18,7 +18,6 @@ body {
     color: rgb(0, 0, 0);
     filter: blur(0.8px)
 }
-
 .printbleed2{
     font-family: "Inter", serif;
     letter-spacing: -4px;
@@ -27,7 +26,6 @@ body {
     color: rgb(0, 0, 0);
     filter: blur(0.8px)
 }
-
 .printbleedmini{
     font-family: "Inter", serif;
     letter-spacing: -5px;
@@ -35,7 +33,6 @@ body {
     text-align: left;  
     color: rgb(0, 0, 0);
 }
-
 .paratex {
     font-family: "Inter", serif;
     font-size: 17px;
@@ -48,7 +45,6 @@ body {
     padding: 0 20px;
     box-sizing: border-box;
 }
-
 .paratex a,
 .paratex a:link,
 .paratex a:visited,
@@ -58,25 +54,28 @@ body {
     text-decoration: none;
     outline: none;
 }
-
 .section-tight {
     margin-bottom: 40px;
 }
-
 .section-tight div {
     line-height: 1.2;
 }
-
 .section-spaced {
     margin-bottom: 40px;
 }
-
 .section-spaced .header {
     margin-bottom: 20px;
 }
-
 .section-spaced div:not(.header) {
     line-height: 1.2;
+}
+
+/* Reenie Beanie font class */
+.reenie-beanie {
+    font-family: "Reenie Beanie", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-variant: normal;
 }
 
 /* Character-by-character typewriter blur animation */
@@ -86,7 +85,6 @@ body {
     display: inline;
     animation: typewriterBlur 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
-
 @keyframes typewriterBlur {
     0% {
         opacity: 0;
@@ -121,7 +119,6 @@ body {
         filter: blur(0px);
     }
 }
-
 /* Mobile Responsiveness */
 @media screen and (max-width: 480px) {
     body {
