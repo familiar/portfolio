@@ -8,7 +8,6 @@
     <title>Built For Creating</title>
 </head>
 <body style="background-color:rgb(255, 255, 255);">
-    <div class="custom-cursor"></div>
     <div style="text-align: center;">
         <div style="display: inline-block; text-align: left; max-width: 680px;">
             <div class="paratex">
@@ -134,24 +133,6 @@
         // Start the typewriter effect when page loads
         document.addEventListener('DOMContentLoaded', function() {
             setTimeout(typeWriter, 500); // Small delay before starting
-            
-            // Custom cursor functionality
-            const cursor = document.querySelector('.custom-cursor');
-            
-            document.addEventListener('mousemove', (e) => {
-                cursor.style.left = e.clientX + 'px';
-                cursor.style.top = e.clientY + 'px';
-            });
-            
-            // Hide cursor when leaving window
-            document.addEventListener('mouseleave', () => {
-                cursor.style.opacity = '0';
-            });
-            
-            // Show cursor when entering window
-            document.addEventListener('mouseenter', () => {
-                cursor.style.opacity = '1';
-            });
         });
     </script>
 </body>
